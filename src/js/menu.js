@@ -34,4 +34,33 @@ document.addEventListener('DOMContentLoaded', () => {
     
     lastScrollTop = scrollTop;
   });
+
+  // スムーズスクロール
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const href = this.getAttribute('href');
+        const target = document.querySelector(href);
+        
+        if (!target) return;
+        
+        const headerHeight = 70; // ヘッダーの高さ
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+
+        // ハンバーガーメニューが開いている場合は閉じる
+        const nav = document.querySelector('.nav');
+        const hamburger = document.querySelector('.hamburger');
+        if (nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    });
+  });
 });

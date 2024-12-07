@@ -22,7 +22,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
   line-height: 1.2;
-  margin-bottom: $spacing-md;
+  // margin-bottom: $spacing-md;
 }
 
 h1 {
@@ -74,20 +74,6 @@ section {
   padding: $spacing-xl 0;
 }
 
-.features {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: $container-padding;
-
-  @include mq($breakpoint-md) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include mq($breakpoint-lg) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 .header {
   position: fixed;
@@ -123,7 +109,7 @@ section {
   left: 0;
   width: 100%;
   height: calc(100vh - 70px);
-  background-color: $bg-color;
+  // background-color: $bg-color;
   padding: $spacing-lg;
 
   @include mq($breakpoint-md) {
@@ -203,7 +189,13 @@ section {
     }
   }
 }
-
+.spbr {
+  display: none;
+  
+  @media (max-width: 768px) {
+      display: block;
+  }
+}
 .hero {
   height: 100vh;
   margin-top: 70px; // ヘッダーの高さ分
@@ -255,23 +247,24 @@ section {
   }
 }
 
-// 特徴セクション
+
 .features {
   padding: $spacing-xl 0;
   background-color: #f8f9fa;
 
   &__grid {
       display: grid;
-      grid-template-columns: 1fr;
       gap: $spacing-lg;
+      width: 100%;  // 追加
       
       @include mq($breakpoint-md) {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(3, 1fr);  // 3カラムに変更
+          max-width: 1200px;  // 追加：最大幅を設定
+          margin: 0 auto;  // 追加：中央揃え
       }
   }
 }
 
-// 特徴カード
 .feature-card {
   background: $bg-color;
   padding: $spacing-lg;
@@ -279,28 +272,37 @@ section {
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-
   &:hover {
-      transform: translateY(-5px);
-  }
-
-  &__icon {
-      font-size: 2.5rem;
-      color: $primary-color;
-      margin-bottom: $spacing-md;
-  }
-
-  &__title {
-      font-size: 1.25rem;
-      margin-bottom: $spacing-md;
-      color: $text-color;
-  }
-
-  &__text {
-      color: lighten($text-color, 20%);
-      line-height: 1.6;
+    transform: translateY(-5px);
+    .feature-card__icon img {
+      color: rgba($primary-color, 0.8);
   }
 }
+
+&__icon {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: $spacing-md;
+    img {
+      width: 50px;
+      height: 50px;
+      color: $primary-color;  // アイコンの色を変更
+    }
+}
+
+&__title {
+    font-size: 1.25rem;
+    margin-bottom: $spacing-md;
+    color: $text-color;
+}
+
+&__text {
+    color: rgba($text-color, 0.8);
+    line-height: 1.6;
+}
+
+}
+
 
 .instructor {
   padding: $spacing-xl 0;
@@ -332,7 +334,7 @@ section {
       span {
           display: block;
           font-size: 1rem;
-          color: lighten($text-color, 20%);
+          color: rgba($text-color, 0.8);
           margin-top: $spacing-xs;
       }
   }
@@ -344,7 +346,7 @@ section {
           position: relative;
           padding-left: 1.5rem;
           margin-bottom: $spacing-sm;
-          color: lighten($text-color, 20%);
+          color: rgba($text-color, 0.8);
 
           &::before {
               content: "•";
@@ -376,6 +378,9 @@ section {
 }
 
 .price-card {
+  display: flex;           // 追加
+  flex-direction: column;  // 追加
+  height: 100%;           // 追加
   background: $bg-color;
   border-radius: 8px;
   padding: $spacing-lg;
@@ -392,7 +397,7 @@ section {
       transform: scale(1.05);
 
       @include mq($breakpoint-md) {
-          margin-top: -20px;
+          margin-top: -10px;
       }
 
       &:hover {
@@ -428,17 +433,17 @@ section {
 
       span {
           font-size: 1rem;
-          color: lighten($text-color, 20%);
+          color: rgba($text-color, 0.8);
       }
   }
 
   &__features {
-      margin-bottom: $spacing-lg;
+      margin-bottom: $spacing-md;
 
       li {
           padding: $spacing-sm 0;
-          border-bottom: 1px solid lighten($text-color, 70%);
-          color: lighten($text-color, 20%);
+          border-bottom: 1px solid rgba($text-color, 0.3);
+          color: rgba($text-color, 0.8);
 
           &:last-child {
               border-bottom: none;
@@ -453,7 +458,12 @@ section {
   }
 
   .btn {
-      width: 100%;
+    width: 100%;
+    margin-top: auto;
+    background: $btn-gradient;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 }
 
@@ -463,49 +473,6 @@ section {
 
   .container {
       max-width: 800px;
-  }
-}
-
-.contact-form {
-  background: $bg-color;
-  padding: $spacing-xl;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-
-  &__group {
-      margin-bottom: $spacing-lg;
-
-      label {
-          display: block;
-          margin-bottom: $spacing-sm;
-          font-weight: bold;
-          color: $text-color;
-      }
-
-      input,
-      select,
-      textarea {
-          width: 100%;
-          padding: $spacing-sm;
-          border: 1px solid lighten($text-color, 60%);
-          border-radius: 4px;
-          transition: border-color 0.3s ease;
-
-          &:focus {
-              outline: none;
-              border-color: $primary-color;
-          }
-      }
-
-      textarea {
-          resize: vertical;
-      }
-  }
-
-  .btn {
-      width: 100%;
-      padding: $spacing-md;
-      font-size: 1.1rem;
   }
 }
 
@@ -556,7 +523,7 @@ section {
       p {
           margin-bottom: $spacing-md;
           line-height: 1.6;
-          color: lighten($text-color, 20%);
+          color: rgba($text-color, 0.8);
       }
 
       ul {
@@ -564,7 +531,7 @@ section {
               position: relative;
               padding-left: 1.5rem;
               margin-bottom: $spacing-sm;
-              color: lighten($text-color, 20%);
+              color: rgba($text-color, 0.8);
 
               &::before {
                   content: "•";
@@ -621,24 +588,81 @@ section {
 
   &__author {
       text-align: right;
-      color: lighten($text-color, 20%);
+      color: rgba($text-color, 0.8);
       font-size: 0.9rem;
   }
   
 }
 
+.contact-form {
+  background: $bg-color;
+  padding: $spacing-lg;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  @include mq($breakpoint-md) {
+    padding: $spacing-xl;
+  }
+  &__group {
+      margin-bottom: $spacing-md;
+      @include mq($breakpoint-md) {
+        margin-bottom: $spacing-lg;
+      }
+
+      label {
+          display: block;
+          margin-bottom: $spacing-sm;
+          font-weight: bold;
+          color: $text-color;
+      }
+
+      input,
+      select,
+      textarea {
+          width: 100%;
+          padding: $spacing-sm;
+          border: 1px solid rgba($text-color, 0.4);
+          border-radius: 4px;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+              outline: none;
+              border-color: $primary-color;
+          }
+      }
+      select {
+        position: relative;
+      }
+
+      textarea {
+          resize: vertical;
+      }
+  }
+
+  .btn {
+      width: 100%;
+      padding: $spacing-md;
+      font-size: 1.1rem;
+      background: $btn-gradient;
+      color: white;
+      font-weight: bold;
+  }
+}
+
 .footer {
-  background-color: darken($primary-color, 10%);
+  padding: 20px 10px;
+  background-color: rgba($primary-color, 0.9);
   color: $light-text;
   padding: $spacing-xl 0 $spacing-lg;
 
   &__content {
       display: grid;
-      gap: $spacing-xl;
-      margin-bottom: $spacing-xl;
+      gap: $spacing-lg;
+      margin-bottom: $spacing-lg;
       
       @include mq($breakpoint-md) {
-          grid-template-columns: 2fr 1fr 1fr;
+        gap: $spacing-xl;
+        grid-template-columns: 2fr 1fr 1fr;
       }
   }
 
@@ -655,15 +679,23 @@ section {
   &__address {
       opacity: 0.8;
       line-height: 1.6;
+      font-size:$font-size-sm;
+      @include mq($breakpoint-md) {
+        font-size:$font-size-base;
+      }
   }
 
   &__nav {
+    margin-bottom: 10px;
       h3 {
           font-size: 1.2rem;
           margin-bottom: $spacing-md;
       }
 
       ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px; 
           li {
               margin-bottom: $spacing-sm;
               
@@ -682,6 +714,8 @@ section {
   }
 
   &__legal {
+    font-size: 12px;
+    line-height: 1.4;
       h3 {
           font-size: 1.2rem;
           margin-bottom: $spacing-md;
@@ -690,6 +724,7 @@ section {
       p {
           opacity: 0.8;
           line-height: 1.6;
+          margin-bottom: 5px;
       }
   }
 
@@ -701,6 +736,34 @@ section {
       p {
           opacity: 0.8;
           font-size: 0.9rem;
+          margin-bottom: 0;
       }
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+  &.visible {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+.transition {
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+      transform: translateY(-5px);
+      opacity: 0.9;
   }
 }

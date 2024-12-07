@@ -11,14 +11,16 @@ $secondary-color: #3AAFA9;  // アクセント（明るい青緑）
 $text-color: #17252A;      // テキスト（濃紺）
 $light-text: #DEF2F1;      // 明るいテキスト
 $bg-color: #FEFFFF;        // 背景色（白）
+$btn-gradient: linear-gradient(135deg, #ff7e5f, #feb47b); //請求ボタン（コーラルからピーチへのグラデーション）
 
 // Typography
-$font-base: 'Noto Sans JP', sans-serif;
-$font-heading: 'Zen Maru Gothic', serif;
+$font-base: "Hiragino Sans", "Yu Gothic", "BIZ UDPGothic", -apple-system, sans-serif;
+$font-heading: "Hiragino Maru Gothic ProN", "BIZ UDPGothic", sans-serif;
 $font-size-base: 16px;
 $font-size-h1: 2.5rem;
 $font-size-h2: 2rem;
 $font-size-h3: 1.5rem;
+$font-size-sm: 14px;
 
 // Spacing
 $spacing-xs: 0.25rem;  // 4px
