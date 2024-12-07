@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Pilates Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner container">
+          <h1 class="header__logo">
+              <a href="/">Online Pilates</a>
+          </h1>
+          
+          <button class="hamburger" aria-label="メニュー">
+              <span class="hamburger__line"></span>
+              <span class="hamburger__line"></span>
+              <span class="hamburger__line"></span>
+          </button>
+  
+          <nav class="nav">
+              <ul class="nav__list">
+                  <li class="nav__item"><a href="#features">特徴</a></li>
+                  <li class="nav__item"><a href="#instructor">講師紹介</a></li>
+                  <li class="nav__item"><a href="#price">料金プラン</a></li>
+                  <li class="nav__item"><a href="#contact">お問い合わせ</a></li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__content container">
+            <h2 class="hero__title">自宅で始める、<br>本格ピラティス</h2>
+            <p class="hero__text">プロの指導者によるオンラインレッスンで、<br>理想的なボディラインへ</p>
+            <a href="#contact" class="btn btn--primary">無料体験レッスンに申し込む</a>
+        </div>
+      </section>
+  
+      <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">オンラインピラティスの特徴</h2>
+            <div class="features__grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="feature-card__title">自宅で快適レッスン</h3>
+                    <p class="feature-card__text">通学時間なし。自宅の好きな場所でレッスンを受講できます。</p>
+                </div>
+    
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="feature-card__title">マンツーマン指導</h3>
+                    <p class="feature-card__text">経験豊富なインストラクターが、一人ひとりの体の状態に合わせて指導します。</p>
+                </div>
+    
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-card__title">柔軟なスケジュール</h3>
+                    <p class="feature-card__text">朝・昼・夜、ご都合の良い時間帯でレッスンを予約できます。</p>
+                </div>
+            </div>
+        </div>
+      </section>
+  
+      <section id="instructor" class="instructor">
+        <div class="container">
+            <h2 class="section-title">インストラクター紹介</h2>
+            <div class="instructor__content">
+                <div class="instructor__image">
+                    <img src="/src/assets/images/instructor.webp" alt="インストラクター">
+                </div>
+                <div class="instructor__info">
+                    <h3 class="instructor__name">Sarah Johnson<span>サラ・ジョンソン</span></h3>
+                    <ul class="instructor__credentials">
+                        <li>全米ヨガアライアンス認定 RYT200</li>
+                        <li>STOTT PILATES® 認定インストラクター</li>
+                        <li>指導歴10年以上</li>
+                    </ul>
+                    <p class="instructor__text">
+                        NYでピラティスを学び、帰国後は都内有名スタジオで指導経験を積む。一人ひとりの体の特徴を見極め、目的に合わせた的確な指導には定評があり、多くの生徒から支持されています。オンラインレッスンでも、きめ細やかなアドバイスと温かい指導で、着実な上達をサポートします。
+                    </p>
+                </div>
+            </div>
+        </div>
+      </section>
+  
+      <section id="price" class="price">
+        <div class="container">
+            <h2 class="section-title">料金プラン</h2>
+            <div class="price__grid">
+                <div class="price-card">
+                    <div class="price-card__header">
+                        <h3>ビギナープラン</h3>
+                        <p class="price-card__price">¥8,800<span>/月</span></p>
+                    </div>
+                    <ul class="price-card__features">
+                        <li>月2回のオンラインレッスン</li>
+                        <li>初心者向けカリキュラム</li>
+                        <li>LINEでのサポート</li>
+                        <li>予約変更可能</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--secondary">無料体験に申し込む</a>
+                </div>
+    
+                <div class="price-card price-card--popular">
+                    <div class="price-card__badge">人気</div>
+                    <div class="price-card__header">
+                        <h3>スタンダードプラン</h3>
+                        <p class="price-card__price">¥15,800<span>/月</span></p>
+                    </div>
+                    <ul class="price-card__features">
+                        <li>月4回のオンラインレッスン</li>
+                        <li>レベル別カリキュラム</li>
+                        <li>24時間LINEサポート</li>
+                        <li>予約変更無制限</li>
+                        <li>オリジナルガイドブック付き</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--primary">無料体験に申し込む</a>
+                </div>
+    
+                <div class="price-card">
+                    <div class="price-card__header">
+                        <h3>プレミアムプラン</h3>
+                        <p class="price-card__price">¥22,800<span>/月</span></p>
+                    </div>
+                    <ul class="price-card__features">
+                        <li>月8回のオンラインレッスン</li>
+                        <li>カスタマイズカリキュラム</li>
+                        <li>24時間優先サポート</li>
+                        <li>予約変更無制限</li>
+                        <li>オリジナルガイドブック付き</li>
+                        <li>食事指導付き</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--secondary">無料体験に申し込む</a>
+                </div>
+            </div>
+        </div>
+      </section>
+  
+      <!-- レッスン内容 -->
+      <section id="lessons" class="lessons">
+        <div class="container">
+            <h2 class="section-title">レッスン内容</h2>
+            <div class="lessons__grid">
+                <div class="lesson-card">
+                    <div class="lesson-card__image">
+                        <img src="/src/assets/images/lesson-beginner.webp" alt="ビギナーレッスン">
+                    </div>
+                    <div class="lesson-card__content">
+                        <h3>ビギナーレッスン</h3>
+                        <p>初めての方でも安心して始められる基礎的なレッスン。正しい呼吸法と基本的なポーズを丁寧に指導します。</p>
+                        <ul>
+                            <li>基本的な呼吸法</li>
+                            <li>コアの意識付け</li>
+                            <li>基礎ポーズの習得</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-card__image">
+                        <img src="/src/assets/images/lesson-intermediate.webp" alt="レギュラーレッスン">
+                    </div>
+                    <div class="lesson-card__content">
+                        <h3>レギュラーレッスン</h3>
+                        <p>基礎を踏まえた上で、より効果的なエクササイズにチャレンジ。体幹の強化と柔軟性の向上を目指します。</p>
+                        <ul>
+                            <li>フローエクササイズ</li>
+                            <li>体幹トレーニング</li>
+                            <li>柔軟性の向上</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- お客様の声 -->
+      <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">お客様の声</h2>
+            <div class="testimonials__grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__image">
+                        <img src="/src/assets/images/testimonial1.webp" alt="お客様1">
+                    </div>
+                    <div class="testimonial-card__content">
+                        <p class="testimonial-card__text">「産後の体型改善に悩んでいましたが、オンラインレッスンで無理なく続けられています。体が軽くなり、姿勢も良くなってきました！」</p>
+                        <p class="testimonial-card__author">Aさん（34歳・主婦）</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-card__image">
+                        <img src="/src/assets/images/testimonial2.webp" alt="お客様2">
+                    </div>
+                    <div class="testimonial-card__content">
+                        <p class="testimonial-card__text">「デスクワークで慢性的な肩こりがありましたが、レッスンを始めて3ヶ月で驚くほど改善しました。仕事の効率も上がっています。」</p>
+                        <p class="testimonial-card__author">Bさん（28歳・会社員）</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-card__image">
+                        <img src="/src/assets/images/testimonial3.webp" alt="お客様3">
+                    </div>
+                    <div class="testimonial-card__content">
+                        <p class="testimonial-card__text">「忙しい毎日でジムに通う時間が取れませんでしたが、オンラインなら空き時間に受講できて理想的です。インストラクターの方の指導も丁寧で安心です。」</p>
+                        <p class="testimonial-card__author">Cさん（42歳・自営業）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+  
+      <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">無料体験レッスンに申し込む</h2>
+            <form class="contact-form">
+                <div class="contact-form__group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="contact-form__group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="contact-form__group">
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="contact-form__group">
+                    <label for="plan">ご希望のプラン</label>
+                    <select id="plan" name="plan" required>
+                        <option value="">選択してください</option>
+                        <option value="beginner">ビギナープラン</option>
+                        <option value="standard">スタンダードプラン</option>
+                        <option value="premium">プレミアムプラン</option>
+                    </select>
+                </div>
+                
+                <div class="contact-form__group">
+                    <label for="message">ご要望・ご質問</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn--primary">送信する</button>
+            </form>
+        </div>
+      </section>
+    </main>
+  
+    <footer class="footer">
+      <div class="container">
+          <div class="footer__content">
+              <div class="footer__info">
+                  <h2 class="footer__logo">Online Pilates</h2>
+                  <p class="footer__text">自宅で始める、本格的なピラティスレッスン</p>
+                  <p class="footer__address">
+                      〒100-0001<br>
+                      東京都千代田区千代田1-1<br>
+                      TEL: 03-1234-5678
+                  </p>
+              </div>
+              
+              <nav class="footer__nav">
+                  <h3>メニュー</h3>
+                  <ul>
+                      <li><a href="#features">特徴</a></li>
+                      <li><a href="#instructor">講師紹介</a></li>
+                      <li><a href="#price">料金プラン</a></li>
+                      <li><a href="#contact">お問い合わせ</a></li>
+                  </ul>
+              </nav>
+  
+              <div class="footer__legal">
+                  <h3>特記事項</h3>
+                  <p>当サイトで使用している画像の一部は、AI技術を活用して生成しています。</p>
+              </div>
+          </div>
+          
+          <div class="footer__bottom">
+              <p>&copy; 2024 Online Pilates. All Rights Reserved.</p>
+          </div>
+      </div>
+    </footer>
+
+    <!-- <div id="app"></div> -->
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

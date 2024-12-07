@@ -1,0 +1,705 @@
+// style.scss
+@use 'variables' as *;
+@use 'reset' as *;
+@use 'mixins' as *;
+
+body {
+  font-family: $font-base;
+  font-size: $font-size-base;
+  color: $text-color;
+  background-color: $bg-color;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  line-height: 1.2;
+  margin-bottom: $spacing-md;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+p {
+  margin-bottom: $spacing-md;
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: 4px;
+  transition: $transition-base;
+  text-decoration: none;
+  text-align: center;
+  
+  &--primary {
+    background-color: $primary-color;
+    color: $light-text;
+    
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+  
+  &--secondary {
+    background-color: $secondary-color;
+    color: $light-text;
+    
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}
+
+// Sections
+section {
+  padding: $spacing-xl 0;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: $container-padding;
+
+  @include mq($breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq($breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba($bg-color, 0.95);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &__inner {
+    @include flex(space-between, center);
+    height: 70px;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+    a {
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.nav {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background-color: $bg-color;
+  padding: $spacing-lg;
+
+  @include mq($breakpoint-md) {
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
+
+  &.active {
+    display: block;
+  }
+
+  &__list {
+    @include flex(center, center, column);
+    
+    @include mq($breakpoint-md) {
+      flex-direction: row;
+      gap: $spacing-lg;
+    }
+  }
+
+  &__item {
+    margin-bottom: $spacing-lg;
+    
+    @include mq($breakpoint-md) {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: $transition-base;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.hamburger {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  
+  @include mq($breakpoint-md) {
+    display: none;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $primary-color;
+    transition: $transition-base;
+
+    &:nth-child(1) { top: 0; }
+    &:nth-child(2) { top: 50%; transform: translateY(-50%); }
+    &:nth-child(3) { bottom: 0; }
+  }
+
+  &.active {
+    .hamburger__line {
+      &:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.hero {
+  height: 100vh;
+  margin-top: 70px; // ヘッダーの高さ分
+
+  @supports (background-image: url('.webp')) {
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                  url('/src/assets/images/hero-bg.webp') center/cover;
+  }
+
+  @supports not (background-image: url('.webp')) {
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                  url('/src/assets/images/hero-bg.jpg') center/cover;
+  }
+
+  &__content {
+      @include flex(center, center, column);
+      height: 100%;
+      color: $light-text;
+      text-align: center;
+  }
+
+  &__title {
+      font-size: 2.5rem;
+      margin-bottom: $spacing-lg;
+      
+      @include mq($breakpoint-md) {
+          font-size: 3.5rem;
+      }
+  }
+
+  &__text {
+      font-size: 1.2rem;
+      margin-bottom: $spacing-xl;
+      
+      @include mq($breakpoint-md) {
+          font-size: 1.5rem;
+      }
+  }
+}
+
+// 共通のセクションタイトルスタイル
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: $spacing-xl;
+  
+  @include mq($breakpoint-md) {
+      font-size: 2.5rem;
+  }
+}
+
+// 特徴セクション
+.features {
+  padding: $spacing-xl 0;
+  background-color: #f8f9fa;
+
+  &__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+      
+      @include mq($breakpoint-md) {
+          grid-template-columns: repeat(3, 1fr);
+      }
+  }
+}
+
+// 特徴カード
+.feature-card {
+  background: $bg-color;
+  padding: $spacing-lg;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+      transform: translateY(-5px);
+  }
+
+  &__icon {
+      font-size: 2.5rem;
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+  }
+
+  &__title {
+      font-size: 1.25rem;
+      margin-bottom: $spacing-md;
+      color: $text-color;
+  }
+
+  &__text {
+      color: lighten($text-color, 20%);
+      line-height: 1.6;
+  }
+}
+
+.instructor {
+  padding: $spacing-xl 0;
+
+  &__content {
+      display: grid;
+      gap: $spacing-xl;
+      
+      @include mq($breakpoint-md) {
+          grid-template-columns: 1fr 1.5fr;
+          align-items: center;
+      }
+  }
+
+  &__image {
+      img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+  }
+
+  &__name {
+      font-size: 1.8rem;
+      margin-bottom: $spacing-md;
+      color: $text-color;
+
+      span {
+          display: block;
+          font-size: 1rem;
+          color: lighten($text-color, 20%);
+          margin-top: $spacing-xs;
+      }
+  }
+
+  &__credentials {
+      margin-bottom: $spacing-lg;
+      
+      li {
+          position: relative;
+          padding-left: 1.5rem;
+          margin-bottom: $spacing-sm;
+          color: lighten($text-color, 20%);
+
+          &::before {
+              content: "•";
+              position: absolute;
+              left: 0;
+              color: $primary-color;
+          }
+      }
+  }
+
+  &__text {
+      line-height: 1.8;
+      color: $text-color;
+  }
+}
+
+.price {
+  padding: $spacing-xl 0;
+  background-color: #f8f9fa;
+
+  &__grid {
+      display: grid;
+      gap: $spacing-lg;
+      
+      @include mq($breakpoint-md) {
+          grid-template-columns: repeat(3, 1fr);
+      }
+  }
+}
+
+.price-card {
+  background: $bg-color;
+  border-radius: 8px;
+  padding: $spacing-lg;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease;
+
+  &:hover {
+      transform: translateY(-5px);
+  }
+
+  &--popular {
+      border: 2px solid $primary-color;
+      transform: scale(1.05);
+
+      @include mq($breakpoint-md) {
+          margin-top: -20px;
+      }
+
+      &:hover {
+          transform: scale(1.05) translateY(-5px);
+      }
+  }
+
+  &__badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: $primary-color;
+      color: $light-text;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+  }
+
+  &__header {
+      text-align: center;
+      margin-bottom: $spacing-lg;
+
+      h3 {
+          font-size: 1.5rem;
+          margin-bottom: $spacing-sm;
+      }
+  }
+
+  &__price {
+      font-size: 2.5rem;
+      color: $primary-color;
+      font-weight: bold;
+
+      span {
+          font-size: 1rem;
+          color: lighten($text-color, 20%);
+      }
+  }
+
+  &__features {
+      margin-bottom: $spacing-lg;
+
+      li {
+          padding: $spacing-sm 0;
+          border-bottom: 1px solid lighten($text-color, 70%);
+          color: lighten($text-color, 20%);
+
+          &:last-child {
+              border-bottom: none;
+          }
+
+          &::before {
+              content: "✓";
+              color: $primary-color;
+              margin-right: $spacing-sm;
+          }
+      }
+  }
+
+  .btn {
+      width: 100%;
+  }
+}
+
+.contact {
+  padding: $spacing-xl 0;
+  background-color: #f8f9fa;
+
+  .container {
+      max-width: 800px;
+  }
+}
+
+.contact-form {
+  background: $bg-color;
+  padding: $spacing-xl;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  &__group {
+      margin-bottom: $spacing-lg;
+
+      label {
+          display: block;
+          margin-bottom: $spacing-sm;
+          font-weight: bold;
+          color: $text-color;
+      }
+
+      input,
+      select,
+      textarea {
+          width: 100%;
+          padding: $spacing-sm;
+          border: 1px solid lighten($text-color, 60%);
+          border-radius: 4px;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+              outline: none;
+              border-color: $primary-color;
+          }
+      }
+
+      textarea {
+          resize: vertical;
+      }
+  }
+
+  .btn {
+      width: 100%;
+      padding: $spacing-md;
+      font-size: 1.1rem;
+  }
+}
+
+// レッスン内容
+.lessons {
+  padding: $spacing-xl 0;
+
+  &__grid {
+      display: grid;
+      gap: $spacing-xl;
+      
+      @include mq($breakpoint-md) {
+          grid-template-columns: repeat(2, 1fr);
+      }
+  }
+}
+
+.lesson-card {
+  background: $bg-color;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+      transform: translateY(-5px);
+  }
+
+  &__image {
+      height: 240px;
+      
+      img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+  }
+
+  &__content {
+      padding: $spacing-lg;
+
+      h3 {
+          font-size: 1.5rem;
+          margin-bottom: $spacing-md;
+          color: $text-color;
+      }
+
+      p {
+          margin-bottom: $spacing-md;
+          line-height: 1.6;
+          color: lighten($text-color, 20%);
+      }
+
+      ul {
+          li {
+              position: relative;
+              padding-left: 1.5rem;
+              margin-bottom: $spacing-sm;
+              color: lighten($text-color, 20%);
+
+              &::before {
+                  content: "•";
+                  position: absolute;
+                  left: 0;
+                  color: $primary-color;
+              }
+          }
+      }
+  }
+}
+
+// お客様の声
+.testimonials {
+  padding: $spacing-xl 0;
+  background-color: #f8f9fa;
+
+  &__grid {
+      display: grid;
+      gap: $spacing-lg;
+      
+      @include mq($breakpoint-md) {
+          grid-template-columns: repeat(3, 1fr);
+      }
+  }
+}
+
+.testimonial-card {
+  background: $bg-color;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  &__image {
+      height: 200px;
+      
+      img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+  }
+
+  &__content {
+      padding: $spacing-lg;
+  }
+
+  &__text {
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: $spacing-md;
+      color: $text-color;
+  }
+
+  &__author {
+      text-align: right;
+      color: lighten($text-color, 20%);
+      font-size: 0.9rem;
+  }
+}
+
+.footer {
+  background-color: darken($primary-color, 10%);
+  color: $light-text;
+  padding: $spacing-xl 0 $spacing-lg;
+
+  &__content {
+      display: grid;
+      gap: $spacing-xl;
+      margin-bottom: $spacing-xl;
+      
+      @include mq($breakpoint-md) {
+          grid-template-columns: 2fr 1fr 1fr;
+      }
+  }
+
+  &__logo {
+      font-size: 1.5rem;
+      margin-bottom: $spacing-md;
+  }
+
+  &__text {
+      margin-bottom: $spacing-md;
+      opacity: 0.8;
+  }
+
+  &__address {
+      opacity: 0.8;
+      line-height: 1.6;
+  }
+
+  &__nav {
+      h3 {
+          font-size: 1.2rem;
+          margin-bottom: $spacing-md;
+      }
+
+      ul {
+          li {
+              margin-bottom: $spacing-sm;
+              
+              a {
+                  color: $light-text;
+                  text-decoration: none;
+                  opacity: 0.8;
+                  transition: opacity 0.3s ease;
+
+                  &:hover {
+                      opacity: 1;
+                  }
+              }
+          }
+      }
+  }
+
+  &__legal {
+      h3 {
+          font-size: 1.2rem;
+          margin-bottom: $spacing-md;
+      }
+
+      p {
+          opacity: 0.8;
+          line-height: 1.6;
+      }
+  }
+
+  &__bottom {
+      padding-top: $spacing-lg;
+      border-top: 1px solid rgba($light-text, 0.1);
+      text-align: center;
+      
+      p {
+          opacity: 0.8;
+          font-size: 0.9rem;
+      }
+  }
+}

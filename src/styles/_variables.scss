@@ -1,0 +1,35 @@
+// _variables.scss
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Colors
+$primary-color: #2B7A78;    // ブランドカラー（深い青緑）
+$secondary-color: #3AAFA9;  // アクセント（明るい青緑）
+$text-color: #17252A;      // テキスト（濃紺）
+$light-text: #DEF2F1;      // 明るいテキスト
+$bg-color: #FEFFFF;        // 背景色（白）
+
+// Typography
+$font-base: 'Noto Sans JP', sans-serif;
+$font-heading: 'Zen Maru Gothic', serif;
+$font-size-base: 16px;
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.5rem;
+
+// Spacing
+$spacing-xs: 0.25rem;  // 4px
+$spacing-sm: 0.5rem;   // 8px
+$spacing-md: 1rem;     // 16px
+$spacing-lg: 2rem;     // 32px
+$spacing-xl: 4rem;     // 64px
+
+// Container
+$container-max-width: 1200px;
+$container-padding: 20px;
+
+// Transitions
+$transition-base: all 0.3s ease;
