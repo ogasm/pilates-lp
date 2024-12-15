@@ -109,7 +109,7 @@ section {
   left: 0;
   width: 100%;
   height: calc(100vh - 70px);
-  // background-color: $bg-color;
+  background-color: $bg-color;
   padding: $spacing-lg;
 
   @include mq($breakpoint-md) {

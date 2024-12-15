@@ -1,0 +1,23 @@
+<svg width="263" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景円 -->
+  <circle cx="131" cy="100" r="70" fill="#DEF2F1" stroke="#3AAFA9" stroke-width="2"/>
+  
+  <!-- 女性の顔 -->
+  <g fill="none" stroke="#2B7A78" stroke-width="2" stroke-linecap="round">
+    <!-- 顔の輪郭 -->
+    <circle cx="131" cy="90" r="25" fill="#FEFFFF"/>
+    
+    <!-- 目と笑顔 -->
+    <path d="M121 85 Q123 87 125 85" stroke-width="2"/>
+    <path d="M137 85 Q139 87 141 85" stroke-width="2"/>
+    <path d="M118 95 Q131 105 144 95" stroke-width="2"/>
+    
+    <!-- 髪の毛 -->
+    <path d="M106 80 Q131 60 156 80" stroke-width="3"/>
+    <path d="M106 80 Q131 70 156 80" fill="#2B7A78"/>
+  </g>
+  
+  <!-- 姿勢改善を表す装飾的な曲線 -->
+  <path d="M91 130 Q131 150 171 130" stroke="#3AAFA9" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M101 140 Q131 160 161 140" stroke="#3AAFA9" stroke-width="2" fill="none" opacity="0.4"/>
+</svg>

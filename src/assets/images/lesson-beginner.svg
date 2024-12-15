@@ -1,0 +1,24 @@
+<svg width="395" height="240" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景円 -->
+  <circle cx="197" cy="120" r="80" fill="#DEF2F1" stroke="#3AAFA9" stroke-width="2"/>
+  
+  <!-- 人型（穏やかな曲線） -->
+  <g fill="none" stroke="#2B7A78" stroke-width="3" stroke-linecap="round">
+    <!-- 頭部 -->
+    <circle cx="197" cy="90" r="15" fill="#FEFFFF"/>
+    
+    <!-- 胴体（直線的） -->
+    <path d="M197 105 Q197 140 197 160" stroke-width="3"/>
+    
+    <!-- 腕（小さめの曲線） -->
+    <path d="M197 120 Q177 125 167 120"/>
+    <path d="M197 120 Q217 125 227 120"/>
+    
+    <!-- 脚（まとまった配置） -->
+    <path d="M197 160 Q192 180 187 190"/>
+    <path d="M197 160 Q202 180 207 190"/>
+  </g>
+  
+  <!-- 装飾的な曲線 -->
+  <path d="M150 70 Q197 50 244 70" stroke="#3AAFA9" stroke-width="2" fill="none" opacity="0.5"/>
+</svg>

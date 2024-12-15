@@ -1,0 +1,22 @@
+<svg width="263" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景円 -->
+  <circle cx="131" cy="100" r="70" fill="#DEF2F1" stroke="#3AAFA9" stroke-width="2"/>
+  
+  <!-- 女性の顔 -->
+  <g fill="none" stroke="#2B7A78" stroke-width="2" stroke-linecap="round">
+    <!-- 顔の輪郭 -->
+    <circle cx="131" cy="90" r="28" fill="#FEFFFF"/>
+    
+    <!-- 目と活気のある表情 -->
+    <path d="M121 85 Q123 82 125 85" stroke-width="2.5"/>
+    <path d="M137 85 Q139 82 141 85" stroke-width="2.5"/>
+    <path d="M116 95 Q131 108 146 95" stroke-width="2.5"/>
+    
+    <!-- エレガントな髪型 -->
+    <path d="M103 75 Q131 55 159 75" stroke-width="3"/>
+    <path d="M103 75 Q131 65 159 75" fill="#2B7A78"/>
+  </g>
+  
+  <!-- オンラインの手軽さを表す波線 -->
+  <path d="M81 130 Q106 150 131 130 Q156 110 181 130" stroke="#3AAFA9" stroke-width="2" fill="none" opacity="0.6"/>
+</svg>

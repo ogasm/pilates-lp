@@ -1,0 +1,24 @@
+<svg width="263" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景円 -->
+  <circle cx="131" cy="100" r="70" fill="#DEF2F1" stroke="#3AAFA9" stroke-width="2"/>
+  
+  <!-- デスクワークを象徴する要素 -->
+  <rect x="91" y="110" width="80" height="40" fill="none" stroke="#2B7A78" stroke-width="2" rx="5"/>
+  
+  <!-- 女性の顔 -->
+  <g fill="none" stroke="#2B7A78" stroke-width="2" stroke-linecap="round">
+    <!-- 顔の輪郭 -->
+    <circle cx="131" cy="90" r="22" fill="#FEFFFF"/>
+    
+    <!-- 目と表情 -->
+    <path d="M121 85 Q123 83 125 85" stroke-width="2"/>
+    <path d="M137 85 Q139 83 141 85" stroke-width="2"/>
+    <path d="M121 95 Q131 100 141 95" stroke-width="2"/>
+    
+    <!-- ショートヘア -->
+    <path d="M111 75 Q131 65 151 75" stroke-width="3"/>
+  </g>
+  
+  <!-- 肩こり改善を表す曲線 -->
+  <path d="M91 60 Q131 40 171 60" stroke="#3AAFA9" stroke-width="2" fill="none" opacity="0.5"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg width="395" height="240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="197" cy="120" r="80" fill="#DEF2F1" stroke="#3AAFA9" stroke-width="2"/>
+  
+  <!-- Dynamic human figure -->
+  <g fill="none" stroke="#2B7A78" stroke-width="3" stroke-linecap="round">
+    <!-- Head -->
+    <circle cx="197" cy="90" r="15" fill="#FEFFFF"/>
+    
+    <!-- Body (more curved) -->
+    <path d="M197 105 Q207 145 197 175" stroke-width="3"/>
+    
+    <!-- Arms (wider and more dynamic curves) -->
+    <path d="M197 120 Q117 170 107 130"/>
+    <path d="M197 120 Q277 170 287 130"/>
+    
+    <!-- Legs (more spread out) -->
+    <path d="M197 175 Q147 215 127 225"/>
+    <path d="M197 175 Q247 215 267 225"/>
+  </g>
+  
+  <!-- Decorative curve -->
+  <path d="M100 50 Q197 10 294 50" stroke="#3AAFA9" stroke-width="2" fill="none" opacity="0.5"/>
+</svg>
